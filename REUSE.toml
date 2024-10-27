@@ -10,94 +10,23 @@ SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.gi
 SPDX-License-Identifier = "MIT"
 
 [[annotations]]
-path = "tsconfig.json"
+path = [".github/workflows/**.yaml", "CODEOWNERS"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
 SPDX-License-Identifier = "MIT"
 
 [[annotations]]
-path = "package.json"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "MIT"
-
-[[annotations]]
-path = "dist/**"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "MIT"
-
-[[annotations]]
-path = "lib/**"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "MIT"
-
-[[annotations]]
-path = ".github/workflows/**.yaml"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "MIT"
-
-[[annotations]]
-path = ".eslintignore"
+path = [
+  ".gitignore",
+  ".markdownlintignore",
+  "secrets.baseline",
+  ".gitleaksignore",
+  ".gitattributes",
+]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
 SPDX-License-Identifier = "CC0-1.0"
 
-[[annotations]]
-path = ".gitignore"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "CC0-1.0"
-
-[[annotations]]
-path = ".markdownlintignore"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "CC0-1.0"
-
-[[annotations]]
-path = ".prettierignore"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "CC0-1.0"
-
-[[annotations]]
-path = ".secrets.baseline"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "CC0-1.0"
-
-[[annotations]]
-path = ".gitleaksignore"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "CC0-1.0"
-
-[[annotations]]
-path = ".gitattributes"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "CC0-1.0"
-
-[[annotations]]
-path = "CODEOWNERS"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "CC0-1.0"
-
-[[annotations]]
-path = "**.json"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "MIT"
-
-[[annotations]]
-path = "pnpm-lock.yaml"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "MIT"
 
 [[annotations]]
 path = "REUSE.toml"
@@ -106,19 +35,7 @@ SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.gi
 SPDX-License-Identifier = "CC0-1.0"
 
 [[annotations]]
-path = "CODE_OF_CONDUCT.md"
+path = ["CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "SECURITY.md"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "CC0-1.0"
-
-[[annotations]]
-path = "CONTRIBUTING.md"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "CC0-1.0"
-
-[[annotations]]
-path = "sonar-project.properties"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
-SPDX-License-Identifier = "CC0-1.0"
+SPDX-License-Identifier = "MIT"
