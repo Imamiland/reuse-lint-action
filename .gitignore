@@ -35,3 +35,5 @@ __pycache__/
 .env.*
 .envrc
 
+# Ignore megalinter files
+megalinter-reports/
