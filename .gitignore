@@ -1,0 +1,37 @@
+# Node.js dependencies
+node_modules/
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Logs
+*.log
+*.log.*
+
+# Temporary files and caches
+*.tmp
+*.swp
+*.DS_Store
+*.bak
+*.old
+*.orig
+*.save
+
+# Compiled output or build artifacts
+dist/
+build/
+out/
+
+# Python cache files (if any scripts are in Python)
+__pycache__/
+*.py[cod]
+
+# Ignore VSCode and IntelliJ project files
+.vscode/
+.idea/
+
+# Ignore environment variable files (often used for local testing)
+.env
+.env.*
+.envrc
+

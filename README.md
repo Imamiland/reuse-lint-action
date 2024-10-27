@@ -1,0 +1,1 @@
+# REUSE Linting Action
