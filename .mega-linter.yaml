@@ -1,0 +1,35 @@
+# SPDX-FileCopyrightText: 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# Configuration for mega-linter
+
+# Apply all fixes
+APPLY_FIXES: all
+
+ENABLE:
+  - BASH
+  - JSON
+  - MARKDOWN
+  - YAML
+  - ACTION
+  - COPY_PASTE
+  - SPELL
+
+ENABLE_LINTERS:
+  - REPOSITORY_SECRETLINT
+  - REPOSITORY_SYFT
+  - REPOSITORY_LS_LINT
+# YAML_YAMLLINT_FILTER_REGEX_EXCLUDE: '(templates/\.mega-linter\.yml)'
+# YAML_PRETTIER_FILTER_REGEX_EXCLUDE: '(templates/\.mega-linter\.yml|mkdocs\.yml)'
+# YAML_V8R_FILTER_REGEX_EXCLUDE: '(descriptors|templates/\.mega-linter\.yml|\.codecov\.yml)'
+SPELL_VALE_FILE_EXTENSIONS:
+  - .md
+SPELL_FILTER_REGEX_EXCLUDE: (valestyles|\.github|docs/licenses)
+SPELL_CSPELL_FILTER_REGEX_EXCLUDE: (gitignore|mega-linter|pre-commit-config|COMMIT_EDITMSG)
+SHOW_ELAPSED_TIME: true
+FLAVOR_SUGGESTIONS: false
+EMAIL_REPORTER: false
+FILEIO_REPORTER: false
+JSON_REPORTER: true
+GITHUB_STATUS_REPORTER: false

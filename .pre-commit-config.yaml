@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2022 - 2024 Ali Sajid Imami
+# SPDX-FileCopyrightText: 2024 Ali Sajid Imami
 #
 # SPDX-License-Identifier: MIT
 
@@ -7,6 +7,11 @@ repos:
     rev: v3.29.1
     hooks:
       - id: commitizen
+
+  - repo: https://github.com/oxsecurity/megalinter
+    rev: v8.1.0
+    hooks:
+      - id: megalinter-full
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
