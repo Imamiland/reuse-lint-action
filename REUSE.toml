@@ -22,6 +22,8 @@ path = [
   "secrets.baseline",
   ".gitleaksignore",
   ".gitattributes",
+  ".markdownlint.json",
+  ".secrets.baseline",
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
