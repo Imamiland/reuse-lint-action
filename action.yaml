@@ -60,7 +60,7 @@ runs:
       shell: bash
       working-directory: ${{inputs.repo-path}}
       run: |
-        compliance_report=$(cat reuse_results | jq @json )
+        compliance_report=$(cat reuse_results.json | jq @json )
         echo "compliance_report=$compliance_report" >> $GITHUB_OUTPUT
     - name: Output Compliance Status
       id: output_status
