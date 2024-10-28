@@ -3,33 +3,38 @@
 # SPDX-License-Identifier: CC0-1.0
 
 # Configuration for mega-linter
+# This configuration defines default settings for mega-linter to help maintain
+# consistent formatting, linting, and best practices across various file types.
 
-# Apply all fixes
+# Apply all fixes where possible to avoid manual intervention
 APPLY_FIXES: all
 
+# Enable specific linters for different file types
 ENABLE:
-  - BASH
-  - JSON
-  - MARKDOWN
-  - YAML
-  - ACTION
-  - COPY_PASTE
-  - SPELL
+  - BASH # Linting for shell scripts
+  - JSON # JSON formatting and syntax checks
+  - MARKDOWN # Checks for markdown file consistency
+  - YAML # Ensures YAML syntax and formatting
+  - ACTION # GitHub Actions workflow files
+  - COPY_PASTE # Detects duplicate code to maintain DRY principles
+  - SPELL # Spell-checks to avoid typos
 
+# Enable specific repository linters
 ENABLE_LINTERS:
-  - REPOSITORY_SECRETLINT
-  - REPOSITORY_SYFT
-  - REPOSITORY_LS_LINT
-# YAML_YAMLLINT_FILTER_REGEX_EXCLUDE: '(templates/\.mega-linter\.yml)'
-# YAML_PRETTIER_FILTER_REGEX_EXCLUDE: '(templates/\.mega-linter\.yml|mkdocs\.yml)'
-# YAML_V8R_FILTER_REGEX_EXCLUDE: '(descriptors|templates/\.mega-linter\.yml|\.codecov\.yml)'
+  - REPOSITORY_SECRETLINT # Checks for sensitive information leaks
+  - REPOSITORY_SYFT # Checks for vulnerabilities in dependencies
+  - REPOSITORY_LS_LINT # Directory structure and naming conventions
+
+# Define file extensions and exclusions for spell-checking
 SPELL_VALE_FILE_EXTENSIONS:
-  - .md
-SPELL_FILTER_REGEX_EXCLUDE: (valestyles|\.github|docs/licenses)
-SPELL_CSPELL_FILTER_REGEX_EXCLUDE: (gitignore|mega-linter|pre-commit-config|COMMIT_EDITMSG)
-SHOW_ELAPSED_TIME: true
-FLAVOR_SUGGESTIONS: false
-EMAIL_REPORTER: false
-FILEIO_REPORTER: false
-JSON_REPORTER: true
-GITHUB_STATUS_REPORTER: false
+  - .md # Only spell-check markdown files
+SPELL_FILTER_REGEX_EXCLUDE: (valestyles|\.github|docs/licenses) # Exclude specific directories from spell-checking
+SPELL_CSPELL_FILTER_REGEX_EXCLUDE: (gitignore|mega-linter|pre-commit-config|COMMIT_EDITMSG) # Exclude patterns to avoid false positives
+
+# Report settings
+SHOW_ELAPSED_TIME: true # Display the time taken for each linter
+FLAVOR_SUGGESTIONS: false # Do not show linter flavor suggestions
+EMAIL_REPORTER: false # Disable email reporting
+FILEIO_REPORTER: false # Disable file IO reporting
+JSON_REPORTER: true # Enable JSON reporting for integration with other tools
+GITHUB_STATUS_REPORTER: false # Disable GitHub Status reporter to avoid too many status checks
