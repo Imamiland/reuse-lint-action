@@ -7,7 +7,7 @@
 # consistent formatting, linting, and best practices across various file types.
 
 # Apply all fixes where possible to avoid manual intervention
-APPLY_FIXES: all
+APPLY_FIXES: none
 
 # Enable specific linters for different file types
 ENABLE:
@@ -25,11 +25,16 @@ ENABLE_LINTERS:
   - REPOSITORY_SYFT # Checks for vulnerabilities in dependencies
   - REPOSITORY_LS_LINT # Directory structure and naming conventions
 
+DISABLE_LINTERS:
+  - JSON_NPM_PACKAGE_JSON_LINT
+
 # Define file extensions and exclusions for spell-checking
 SPELL_VALE_FILE_EXTENSIONS:
   - .md # Only spell-check markdown files
 SPELL_FILTER_REGEX_EXCLUDE: (valestyles|\.github|docs/licenses) # Exclude specific directories from spell-checking
 SPELL_CSPELL_FILTER_REGEX_EXCLUDE: (gitignore|mega-linter|pre-commit-config|COMMIT_EDITMSG) # Exclude patterns to avoid false positives
+JSON_JSONLINT_ARGUMENTS: -t 4
+JSON_PRETTIER_ARGUMENTS: --tab-width 4
 
 # Report settings
 SHOW_ELAPSED_TIME: true # Display the time taken for each linter
