@@ -41,9 +41,9 @@ runs:
       shell: bash
       run: |
         echo "Checking that the environment is sane"
-        echo "Python Version: ${python --version}"
-        echo "Pipx Version: ${pipx --version}"
-        echo "jq Version: ${jq --version}"
+        echo "Python Version: $( python --version )"
+        echo "Pipx Version: $( pipx --version )"
+        echo "jq Version: $( jq --version )"
     - name: Setup REUSE helper tool
       id: reuse_setup
       uses: threeal/pipx-install-action@b0bf0add7d5aefda03a3d4e47d651df807889e10 # v1.0.0
@@ -58,7 +58,7 @@ runs:
       id: output_report
       shell: bash
       working-directory: ${{inputs.repo-path}}
-      run: echo "compliance_report=${cat reuse_results.json}" >> $GITHUB_OUTPUT
+      run: echo "compliance_report=$( cat reuse_results.json )" >> $GITHUB_OUTPUT
     - name: Output Compliance Status
       id: output_status
       shell: bash
