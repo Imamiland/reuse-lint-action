@@ -1,0 +1,43 @@
+# action.yaml
+
+# SPDX-FileCopyrightText: 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: MIT
+
+name: "REUSE Compliance Checker"
+description: "A GitHub Action to check if a repository is compliant with the REUSE specification."
+author: "Ali Sajid Imami"
+branding:
+  icon: "check-circle"
+  color: "green"
+
+# Define inputs for configuring the action
+inputs:
+  token:
+    description: "GitHub token for repository access if needed."
+    required: false
+    default: "${{ github.token }}"
+
+  # Optional argument to specify custom REUSE compliance checks or configurations
+  compliance_args:
+    description: "Optional arguments to pass to the REUSE tool."
+    required: false
+    default: ""
+
+# Define outputs to provide a summary of compliance
+outputs:
+  compliance_status:
+    description: "Returns 'compliant' or 'non-compliant' based on REUSE compliance check."
+    value: "true"
+  compliance_report:
+    description: "Detailed output of the REUSE compliance check."
+    value: "{}"
+
+# Define the action runs using composite
+runs:
+  using: "composite"
+  steps:
+    - name: Setup pipx
+      id: pipx_setup
+      shell: bash
+      run: pipx --version

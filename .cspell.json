@@ -1,0 +1,14 @@
+{
+    "flagWords": ["hte"],
+    "ignorePaths": [".cspell.json"],
+    "language": "en",
+    "languageSettings": [
+        {
+            "allowCompoundWords": true,
+            "languageId": "typescript,json,javascript,yaml",
+            "locale": "en, en-US"
+        }
+    ],
+    "version": "0.2",
+    "words": ["mkdirp", "tsmerge", "Ali", "Sajid", "Imami", "pip", "pipx"]
+}

@@ -19,11 +19,11 @@ SPDX-License-Identifier = "MIT"
 path = [
   ".gitignore",
   ".markdownlintignore",
-  "secrets.baseline",
   ".gitleaksignore",
   ".gitattributes",
   ".markdownlint.json",
   ".secrets.baseline",
+  ".cspell.json",
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
