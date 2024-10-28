@@ -31,10 +31,6 @@ repos:
       - id: mixed-line-ending
         args:
           - --fix=no
-      - id: pretty-format-json
-        args:
-          - --indent=4
-          - --autofix
       - id: trailing-whitespace
         args:
           - --markdown-linebreak-ext=md
