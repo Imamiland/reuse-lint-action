@@ -54,6 +54,7 @@ runs:
       shell: bash
       working-directory: ${{inputs.repo-path}}
       run: reuse lint --json > reuse_results.json
+      continue-on-error: true
     - name: Output Compliance Report
       id: output_report
       shell: bash
