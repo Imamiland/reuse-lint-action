@@ -28,11 +28,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
         with:
+          path: main
+
+      - name: Checkout repository
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
+        with:
           repository: Imamiland/${{matrix.repo}}
+          path: ${{matrix.repo}}
 
       - name: Check REUSE Compliance
         id: reuse_check
-        uses: ./
+        uses: ./main
+        with:
+          repo-path: ${{matrix.repo}}
 
       - name: Debug Output
-        run: echo ${{join(steps.reuse_check.outputs.compliance_report, '\n')}}
+        run: echo "${{ steps.reuse_check.outputs.compliance_report }}"
