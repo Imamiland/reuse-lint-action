@@ -18,26 +18,51 @@ inputs:
     required: false
     default: "${{ github.token }}"
 
-  # Optional argument to specify custom REUSE compliance checks or configurations
-  compliance_args:
-    description: "Optional arguments to pass to the REUSE tool."
-    required: false
-    default: ""
+  repo-path:
+    description: "Path to the repository where we run the helper tool"
+    required: true
+    default: "."
 
 # Define outputs to provide a summary of compliance
 outputs:
   compliance_status:
     description: "Returns 'compliant' or 'non-compliant' based on REUSE compliance check."
-    value: "true"
+    value: ${{ steps.output_status.compliance_status }}
   compliance_report:
     description: "Detailed output of the REUSE compliance check."
-    value: "{}"
+    value: ${{ steps.output_report.compliance_report }}
 
 # Define the action runs using composite
 runs:
   using: "composite"
   steps:
-    - name: Setup pipx
-      id: pipx_setup
+    - name: Check Environment Sanity
+      id: env_sanity
       shell: bash
-      run: pipx --version
+      run: |
+        echo "Checking that the environment is sane"
+        echo "Python Version: ${python --version}"
+        echo "Pipx Version: ${pipx --version}"
+        echo "jq Version: ${jq --version}"
+    - name: Setup REUSE helper tool
+      id: reuse_setup
+      uses: threeal/pipx-install-action@b0bf0add7d5aefda03a3d4e47d651df807889e10 # v1.0.0
+      with:
+        packages: reuse
+    - name: Run REUSE for linting
+      id: run_reuse
+      shell: bash
+      working-directory: ${{inputs.repo-path}}
+      run: reuse lint --json > reuse_results.json
+    - name: Output Compliance Report
+      id: output_report
+      shell: bash
+      working-directory: ${{inputs.repo-path}}
+      run: echo "compliance_report=${cat reuse_results.json}" >> $GITHUB_OUTPUT
+    - name: Output Compliance Status
+      id: output_status
+      shell: bash
+      working-directory: ${{inputs.repo-path}}
+      run: |
+        command_status=$(cat reuse_results.json | jq '.summary.compliant')
+        echo "compliance_status=$command_status" >> $GITHUB_OUTPUT
