@@ -58,7 +58,9 @@ runs:
       id: output_report
       shell: bash
       working-directory: ${{inputs.repo-path}}
-      run: echo "compliance_report=$( cat reuse_results.json )" >> $GITHUB_OUTPUT
+      run: |
+        compliance_report=$(cat reuse_results | jq @json )
+        echo "compliance_report=$compliance_report" >> $GITHUB_OUTPUT
     - name: Output Compliance Status
       id: output_status
       shell: bash
