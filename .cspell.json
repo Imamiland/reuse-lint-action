@@ -10,5 +10,14 @@
         }
     ],
     "version": "0.2",
-    "words": ["mkdirp", "tsmerge", "Ali", "Sajid", "Imami", "pip", "pipx"]
+    "words": [
+        "mkdirp",
+        "tsmerge",
+        "Ali",
+        "Sajid",
+        "Imami",
+        "pip",
+        "pipx",
+        "threeal"
+    ]
 }
