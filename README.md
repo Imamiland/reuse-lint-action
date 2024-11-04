@@ -5,3 +5,5 @@ SPDX-License-Identifier: MIT
 -->
 
 # REUSE Linting Action
+
+This is a GitHub Action to implement REUSE linting
