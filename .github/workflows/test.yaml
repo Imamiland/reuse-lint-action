@@ -1,0 +1,46 @@
+---
+name: "Test Workflow"
+on: # rebuild any PRs and main branch changes
+  pull_request:
+  push:
+    branches:
+      - "main"
+      - "next"
+
+jobs:
+  test-reuse-compliance: # make sure the action works on a clean machine without building
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo:
+          - reuse-lint-action-compliant
+          - reuse-lint-action-copyrightonly
+          - reuse-lint-action-licenseonly
+          - reuse-lint-action-missinglicense
+          - reuse-lint-action-noncompliant
+          - reuse-lint-action-semicompliant
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
+        with:
+          path: main
+
+      - name: Checkout repository
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
+        with:
+          repository: Imamiland/${{matrix.repo}}
+          path: ${{matrix.repo}}
+
+      - name: Check REUSE Compliance
+        id: reuse_check
+        uses: ./main
+        with:
+          repo-path: ${{matrix.repo}}
+
+      - name: Debug Output
+        run: echo "${{ steps.reuse_check.outputs.compliance_report }}"
