@@ -17,13 +17,13 @@ SPDX-License-Identifier = "MIT"
 
 [[annotations]]
 path = [
-  ".gitignore",
-  ".markdownlintignore",
-  ".gitleaksignore",
-  ".gitattributes",
-  ".markdownlint.json",
-  ".secrets.baseline",
-  ".cspell.json",
+    ".gitignore",
+    ".markdownlintignore",
+    ".gitleaksignore",
+    ".gitattributes",
+    ".markdownlint.json",
+    ".secrets.baseline",
+    ".cspell.json",
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
@@ -38,6 +38,12 @@ SPDX-License-Identifier = "CC0-1.0"
 
 [[annotations]]
 path = ["CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "SECURITY.md"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["mise.toml", "mise.lock"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 Ali Sajid Imami <395482+AliSajid@users.noreply.github.com>"
 SPDX-License-Identifier = "MIT"
