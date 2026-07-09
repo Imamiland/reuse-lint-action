@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# SPDX-FileCopyrightText: Ali Sajid Imami
+#
+# SPDX-License-Identifier: MIT
+
+#MISE description="Fix formatting with Prettier"
+#MISE depends=["_install"]
+set -e
+pnpm exec prettier --write --ignore-unknown --no-error-on-unmatched-pattern "$@"

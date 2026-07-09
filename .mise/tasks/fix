@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# SPDX-FileCopyrightText: Ali Sajid Imami
+#
+# SPDX-License-Identifier: MIT
+
+#MISE description="Auto-fix formatting and linting issues"
+#MISE depends=["_install"]
+mapfile -t CHANGED_FILES < <(git --no-pager diff --name-only --diff-filter=d --staged)
+set -e
+if ((${#CHANGED_FILES[@]} > 0)); then
+    mise run prettier:fix "${CHANGED_FILES[@]}"
+    mise run eslint:fix "${CHANGED_FILES[@]}"
+fi

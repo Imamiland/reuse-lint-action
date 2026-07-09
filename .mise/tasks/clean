@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# SPDX-FileCopyrightText: Ali Sajid Imami
+#
+# SPDX-License-Identifier: MIT
+
+#MISE description="Clean build artifacts"
+rm -rf dist/ coverage/ node_modules/.vite .rollup.cache guide/book
