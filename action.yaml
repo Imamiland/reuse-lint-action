@@ -13,19 +13,14 @@ branding:
 
 # Define inputs for configuring the action
 inputs:
-  token:
-    description: "GitHub token for repository access if needed."
+  path:
+    description: "Path to the directory where we run the helper tool"
     required: false
-    default: "${{ github.token }}"
-
-  repo-path:
-    description: "Path to the repository where we run the helper tool"
-    required: true
     default: "."
 
 # Define outputs to provide a summary of compliance
 outputs:
-  compliance_status:
+  compliant:
     description: "Returns 'compliant' or 'non-compliant' based on REUSE compliance check."
     value: ${{ steps.output_status.compliance_status }}
   compliance_report:
