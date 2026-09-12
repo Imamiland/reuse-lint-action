@@ -4,12 +4,12 @@
 
 repos:
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.29.1
+    rev: v3.31.0
     hooks:
       - id: commitizen
 
   - repo: https://github.com/oxsecurity/megalinter
-    rev: v8.1.0
+    rev: v8.8.0
     hooks:
       - id: megalinter-full
 
@@ -65,7 +65,7 @@ repos:
       - id: remove-tabs
 
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.35.1
+    rev: v1.37.1
     hooks:
       - id: yamllint
         args:
@@ -74,7 +74,7 @@ repos:
           - commit-msg
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.42.0
+    rev: v0.45.0
     hooks:
       - id: markdownlint
         args:
@@ -90,14 +90,14 @@ repos:
           - ".secrets.baseline"
 
   - repo: https://github.com/sirosen/texthooks
-    rev: 0.6.7
+    rev: 0.7.1
     hooks:
       - id: fix-smartquotes
       - id: fix-ligatures
       - id: forbid-bidi-controls
 
   - repo: https://github.com/zricethezav/gitleaks
-    rev: v8.21.0
+    rev: v8.28.0
     hooks:
       - id: gitleaks
 
@@ -107,7 +107,7 @@ repos:
       - id: reuse
 
   - repo: https://github.com/renovatebot/pre-commit-hooks
-    rev: 38.126.2
+    rev: 38.142.7
     hooks:
       - id: renovate-config-validator
         language_version: 20.18.0
